@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Sudoku solver</title>
+</head>
+
+<body>
+    <section>
+        <div class="instructions">
+            <div>
+                <h1>INSTRUCTIONS</h1>
+                <div>
+                    <ul>
+                        <li>You can directly change the input by clicking on the box</li>
+                        <li>Allowed inputs are from 0 to 9 only. Other inputs will be considered as 0</li>
+                        <li>Once you click solve, everything on the page will be disabled (you can not click on
+                            anything)
+                        </li>
+                        <li>Once the solution is completed, you need to click reset button to reset it to sample input
+                            then
+                            you can provide your own inputs.</li>
+                    </ul>
+                </div>
+                <button class="close-button">Close</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="heading">
+                <h1>Sudoku solver</h1>
+            </div>
+            <div id="solver">
+                <div class="solver-row">
+                    <div class="solver-row__square border-top">
+                        <div class="solver-row__square-row input__background-gray">
+                            <input class="input-field border-left " type="number" name="00" maxlength=1 min="0" max="9">
+                            <input class="input-field" type="number" name="01" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="02" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                        <div class="solver-row__square-row input__background-white">
+                            <input class="input-field" type="number" name="03" maxlength="1" min="0" max="9">
+                            <input class="input-field" type="number" name="04" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="05" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                        <div class="solver-row__square-row input__background-gray">
+                            <input class="input-field" type="number" name="06" maxlength="1" min="0" max="9">
+                            <input class="input-field" type="number" name="07" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="08" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                    </div>
+                    <div class="solver-row__square ">
+                        <div class="solver-row__square-row input__background-gray">
+                            <input class="input-field border-left" type="number" name="10" maxlength="1" min="0"
+                                max="9">
+                            <input class="input-field" type="number" name="11" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="12" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                        <div class="solver-row__square-row input__background-white">
+                            <input class="input-field" type="number" name="13" maxlength="1" min="0" max="9">
+                            <input class="input-field" type="number" name="14" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="15" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                        <div class="solver-row__square-row input__background-gray">
+                            <input class="input-field" type="number" name="16" maxlength="1" min="0" max="9">
+                            <input class="input-field" type="number" name="17" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="18" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                    </div>
+                    <div class="solver-row__square">
+                        <div class="solver-row__square-row input__background-gray">
+                            <input class="input-field border-left" type="number" name="20" maxlength="1" min="0"
+                                max="9">
+                            <input class="input-field" type="number" name="21" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="22" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                        <div class="solver-row__square-row input__background-white">
+                            <input class="input-field" type="number" name="23" maxlength="1" min="0" max="9">
+                            <input class="input-field" type="number" name="24" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="25" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                        <div class="solver-row__square-row input__background-gray">
+                            <input class="input-field" type="number" name="26" maxlength="1" min="0" max="9">
+                            <input class="input-field" type="number" name="27" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="28" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                    </div>
+                </div>
+                <div class="solver-row">
+                    <div class="solver-row__square border-top">
+                        <div class="solver-row__square-row input__background-white">
+                            <input class="input-field border-left" type="number" name="30" maxlength="1" min="0"
+                                max="9">
+                            <input class="input-field" type="number" name="31" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="32" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                        <div class="solver-row__square-row input__background-gray">
+                            <input class="input-field" type="number" name="33" maxlength="1" min="0" max="9">
+                            <input class="input-field" type="number" name="34" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="35" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                        <div class="solver-row__square-row input__background-white">
+                            <input class="input-field" type="number" name="36" maxlength="1" min="0" max="9">
+                            <input class="input-field" type="number" name="37" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="38" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                    </div>
+                    <div class="solver-row__square">
+                        <div class="solver-row__square-row input__background-white">
+                            <input class="input-field border-left" type="number" name="40" maxlength="1" min="0"
+                                max="9">
+                            <input class="input-field" type="number" name="41" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="42" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                        <div class="solver-row__square-row input__background-gray">
+                            <input class="input-field" type="number" name="43" maxlength="1" min="0" max="9">
+                            <input class="input-field" type="number" name="44" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="45" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                        <div class="solver-row__square-row input__background-white">
+                            <input class="input-field" type="number" name="46" maxlength="1" min="0" max="9">
+                            <input class="input-field" type="number" name="47" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="48" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                    </div>
+                    <div class="solver-row__square">
+                        <div class="solver-row__square-row input__background-white">
+                            <input class="input-field border-left" type="number" name="50" maxlength="1" min="0"
+                                max="9">
+                            <input class="input-field" type="number" name="51" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="52" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                        <div class="solver-row__square-row input__background-gray">
+                            <input class="input-field" type="number" name="53" maxlength="1" min="0" max="9">
+                            <input class="input-field" type="number" name="54" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="55" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                        <div class="solver-row__square-row input__background-white">
+                            <input class="input-field" type="number" name="56" maxlength="1" min="0" max="9">
+                            <input class="input-field" type="number" name="57" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="58" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                    </div>
+                </div>
+                <div class="solver-row">
+                    <div class="solver-row__square border-top">
+                        <div class="solver-row__square-row input__background-gray">
+                            <input class="input-field border-left" type="number" name="60" maxlength="1" min="0"
+                                max="9">
+                            <input class="input-field" type="number" name="61" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="62" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                        <div class="solver-row__square-row input__background-white">
+                            <input class="input-field" type="number" name="63" maxlength="1" min="0" max="9">
+                            <input class="input-field" type="number" name="64" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="65" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                        <div class="solver-row__square-row input__background-gray">
+                            <input class="input-field" type="number" name="66" maxlength="1" min="0" max="9">
+                            <input class="input-field" type="number" name="67" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="68" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                    </div>
+                    <div class="solver-row__square">
+                        <div class="solver-row__square-row input__background-gray">
+                            <input class="input-field border-left" type="number" name="70" maxlength="1" min="0"
+                                max="9">
+                            <input class="input-field" type="number" name="71" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="72" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                        <div class="solver-row__square-row input__background-white">
+                            <input class="input-field" type="number" name="73" maxlength="1" min="0" max="9">
+                            <input class="input-field" type="number" name="74" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="75" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                        <div class="solver-row__square-row input__background-gray">
+                            <input class="input-field" type="number" name="76" maxlength="1" min="0" max="9">
+                            <input class="input-field" type="number" name="77" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="78" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                    </div>
+                    <div class="solver-row__square border-bottom">
+                        <div class="solver-row__square-row input__background-gray">
+                            <input class="input-field border-left" type="number" name="80" maxlength="1" min="0"
+                                max="9">
+                            <input class="input-field" type="number" name="81" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="82" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                        <div class="solver-row__square-row input__background-white">
+                            <input class="input-field" type="number" name="83" maxlength="1" min="0" max="9">
+                            <input class="input-field" type="number" name="84" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="85" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                        <div class="solver-row__square-row input__background-gray">
+                            <input class="input-field" type="number" name="86" maxlength="1" min="0" max="9">
+                            <input class="input-field" type="number" name="87" maxlength="1" min="0" max="9">
+                            <input class="input-field border-right" type="number" name="88" maxlength="1" min="0"
+                                max="9">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="button__parent">
+                <button id="reset-button">Reset</button>
+                <button id="button">Solve</button>
+            </div>
+            <div class="message">
+                <h1></h1>
+            </div>
+        </div>
+    </section>
+    <script src="./script.js"></script>
+</body>
+
+</html>

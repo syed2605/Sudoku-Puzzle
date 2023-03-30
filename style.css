@@ -1,0 +1,148 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #e0e0e0;
+    font-family: 'Poppins',
+        sans-serif;
+}
+
+
+section {
+    position: relative;
+}
+
+.instructions {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.486);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instructions>div {
+    max-width: 70vw;
+    min-width: 50vw;
+    min-height: 40vh;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.heading h1,
+.instructions h1 {
+    color: crimson;
+    font-size: 30px;
+    font-weight: 500;
+    margin: 5px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+#solver {
+    padding: 10px;
+}
+
+.solver-row__square {
+    display: flex;
+}
+
+.solver-row__square-row {
+    display: flex;
+}
+
+.solver-row__square-row input {
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    text-align: center;
+    font-weight: 500;
+    outline: none;
+    border: 1px solid rgb(177, 177, 177);
+    font-size: 20px;
+    background: #e0e0e0;
+}
+
+button {
+    background-color: crimson;
+    color: white;
+    cursor: pointer;
+}
+
+.border-top input {
+    border-top: 2px solid black;
+}
+
+.border-bottom input {
+    border-bottom: 2px solid black;
+}
+
+.solver-row__square-row .border-left {
+    border-left: 2px solid black;
+}
+
+.solver-row__square-row .border-right {
+    border-right: 2px solid black;
+}
+
+#button__parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#button__parent button,
+.close-button {
+    padding: 10px 15px;
+    font-size: 15px;
+    margin: 10px;
+    border: none;
+}
+
+
+@media screen and (max-width:500px) {
+    .solver-row__square-row input {
+        width: 25px;
+        height: 25px;
+        padding: 5px;
+        font-size: 18px;
+    }
+
+    .instructions>div {
+        padding: 20px;
+    }
+
+    .heading h1,
+    .instructions h1 {
+        font-size: 25px;
+    }
+
+    #button__parent button,
+    .close-button {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+}
